@@ -12,12 +12,12 @@ export function Contact() {
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Let's Build Something Amazing
+            Let&apos;s Build Something Amazing
           </span>
         </h2>
         
         <p className="text-lg md:text-xl text-foreground/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-          I'm always interested in hearing about new projects and opportunities.
+          I&apos;m always interested in hearing about new projects and opportunities.
           Whether you have a question or just want to say hi, feel free to reach out!
         </p>
 
