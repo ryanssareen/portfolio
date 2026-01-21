@@ -1,12 +1,14 @@
-import { Header } from "@/components/Header";
-import { ProjectCard } from "@/components/ProjectCard";
-import { About } from "@/components/About";
-import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { Projects } from "@/components/Projects";
+import { Skills } from "@/components/Skills";
+import { Contact } from "@/components/Contact";
+import { Navigation } from "@/components/Navigation";
 
 const projects = [
   {
     title: "Recipe Journal",
     accentColor: "#22c55e",
+    gradient: "from-green-500 to-emerald-600",
     techStack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
     apis: ["Groq (AI)", "Brevo (Email)"],
     description:
@@ -18,10 +20,12 @@ const projects = [
       "Email notifications",
     ],
     liveUrl: "https://recipe-journal-beryl.vercel.app",
+    icon: "🍳",
   },
   {
     title: "Workout Tracker",
     accentColor: "#ef4444",
+    gradient: "from-red-500 to-rose-600",
     techStack: ["Next.js", "React", "Tailwind CSS", "Firebase"],
     apis: ["Groq (AI Chatbot)", "Brevo", "Firebase Auth"],
     description:
@@ -33,10 +37,12 @@ const projects = [
       "AI chatbot for fitness advice",
     ],
     liveUrl: "https://ryanssareen-workout-site-k6vl.vercel.app",
+    icon: "💪",
   },
   {
     title: "Finance Manager",
     accentColor: "#3b82f6",
+    gradient: "from-blue-500 to-indigo-600",
     techStack: ["Next.js", "React", "Tailwind CSS", "Firebase"],
     apis: ["Groq (AI Insights)", "Brevo", "Firebase Auth"],
     description:
@@ -48,30 +54,18 @@ const projects = [
       "Visual charts & AI insights",
     ],
     liveUrl: "https://finance-app-theta-ten.vercel.app",
+    icon: "💰",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Header />
-
-      {/* Projects Section */}
-      <section className="py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Featured Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <About />
-      <Footer />
+    <main className="min-h-screen overflow-x-hidden">
+      <Navigation />
+      <Hero />
+      <Projects projects={projects} />
+      <Skills />
+      <Contact />
     </main>
   );
 }
