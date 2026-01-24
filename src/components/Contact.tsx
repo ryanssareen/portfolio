@@ -2,7 +2,7 @@
 
 export function Contact() {
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-6 relative overflow-hidden">
+    <section id="contact" className="min-h-screen flex items-center justify-center pt-24 pb-20 px-6 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-normal opacity-20 dark:opacity-10 animate-blob" />

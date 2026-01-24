@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -12,7 +13,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
@@ -35,7 +36,7 @@ export function Hero() {
               Full-Stack Developer
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl lg:text-3xl text-foreground/80 mb-8 font-light">
             Building modern web experiences with{" "}
             <span className="font-semibold text-blue-600 dark:text-blue-400">
@@ -100,52 +101,18 @@ export function Hero() {
           }`}
         >
           <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+            <Link
+              href="/projects"
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-2xl hover:scale-105 transition-all"
             >
               View Projects
-            </button>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+            </Link>
+            <Link
+              href="/contact"
               className="px-8 py-4 bg-white dark:bg-slate-800 text-foreground rounded-xl font-semibold border-2 border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-blue-600 hover:scale-105 transition-all"
             >
               Get in Touch
-            </button>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div
-          className={`absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-1000 ${
-            mounted
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
-          }`}
-        >
-          <div className="flex flex-col items-center gap-2 text-foreground/40">
-            <span className="text-sm font-medium">Scroll to explore</span>
-            <svg
-              className="w-6 h-6 animate-bounce"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
+            </Link>
           </div>
         </div>
       </div>

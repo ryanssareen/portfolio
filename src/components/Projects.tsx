@@ -20,7 +20,7 @@ interface ProjectsProps {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <section id="projects" className="min-h-screen py-20 px-6 relative">
+    <section id="projects" className="min-h-screen pt-24 pb-20 px-6 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />

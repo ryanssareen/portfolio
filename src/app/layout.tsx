@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Navigation } from "@/components/Navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ryan's Portfolio | Full-Stack Developer",
+  title: "Ryan Sareen | Full-Stack Developer",
   description:
     "Full-stack developer building modern web apps with React, Next.js, and AI integration. View my portfolio of projects including Recipe Journal, Workout Tracker, and Finance Manager.",
   keywords: [
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     "AI Integration",
     "Freelance Developer",
   ],
-  authors: [{ name: "Ryan" }],
+  authors: [{ name: "Ryan Sareen" }],
   openGraph: {
-    title: "Ryan's Portfolio | Full-Stack Developer",
+    title: "Ryan Sareen | Full-Stack Developer",
     description:
       "Full-stack developer building modern web apps with React, Next.js, and AI integration.",
     type: "website",
@@ -46,7 +47,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Navigation />
+          <main className="min-h-screen overflow-x-hidden">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
