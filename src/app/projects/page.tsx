@@ -27,6 +27,7 @@ const projects = [
     liveUrl: "https://recipe-journal-beryl.vercel.app",
     githubUrl: "https://github.com/ryanssareen",
     icon: "🍳",
+    image: "/projects/recipe-journal.png",
     number: "01",
   },
   {
@@ -48,6 +49,7 @@ const projects = [
     liveUrl: "https://ryanssareen-workout-site-k6vl.vercel.app",
     githubUrl: "https://github.com/ryanssareen",
     icon: "💪",
+    image: "/projects/workout-tracker.png",
     number: "02",
   },
   {
@@ -69,6 +71,7 @@ const projects = [
     liveUrl: "https://finance-app-theta-ten.vercel.app",
     githubUrl: "https://github.com/ryanssareen",
     icon: "💰",
+    image: "/projects/finance-manager.png",
     number: "03",
   },
 ];

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface ProjectCardProps {
   title: string;
   accentColor: string;
@@ -13,6 +15,7 @@ interface ProjectCardProps {
   liveUrl: string;
   githubUrl: string;
   icon: string;
+  image: string;
   number: string;
   index: number;
 }
@@ -29,7 +32,7 @@ export function ProjectCard({
   features,
   liveUrl,
   githubUrl,
-  icon,
+  image,
   number,
   index,
 }: ProjectCardProps) {
@@ -61,30 +64,29 @@ export function ProjectCard({
 
               {/* Main visual card */}
               <div className="relative rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1">
-                {/* Gradient header bar */}
-                <div className={`h-48 md:h-56 bg-gradient-to-br ${gradient} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/5" />
-                  <div className="absolute -top-20 -right-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
-                  <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
-
-                  {/* Project number */}
-                  <div className="absolute top-6 right-6 text-white/20 text-8xl font-bold leading-none select-none">
-                    {number}
-                  </div>
-
-                  {/* Icon centered */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center text-5xl shadow-2xl group-hover:scale-110 transition-transform duration-500">
-                      {icon}
-                    </div>
-                  </div>
+                {/* Screenshot */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={`${title} screenshot`}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  {/* Gradient overlay at bottom for smooth transition */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white dark:from-slate-800 to-transparent" />
 
                   {/* Live badge */}
-                  <div className="absolute top-6 left-6">
-                    <div className="flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold">
-                      <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-soft" />
+                  <div className="absolute top-4 left-4">
+                    <div className={`flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r ${gradient} rounded-full text-white text-xs font-semibold shadow-lg`}>
+                      <span className="w-2 h-2 rounded-full bg-white animate-pulse-soft" />
                       Live
                     </div>
+                  </div>
+
+                  {/* Project number */}
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-black/30 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-sm font-bold">
+                    {number}
                   </div>
                 </div>
 

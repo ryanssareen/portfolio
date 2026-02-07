@@ -15,6 +15,7 @@ interface Project {
   liveUrl: string;
   githubUrl: string;
   icon: string;
+  image: string;
   number: string;
 }
 
