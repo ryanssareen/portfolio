@@ -35,7 +35,7 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || mobileMenuOpen
-          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-lg"
+          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-slate-200/50 dark:border-slate-700/50"
           : "bg-transparent"
       }`}
     >
@@ -44,39 +44,41 @@ export function Navigation() {
           {/* Logo/Name */}
           <Link
             href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
             Ryan Sareen
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors font-medium ${
+                className={`relative px-4 py-2 rounded-lg text-sm transition-all font-medium ${
                   isActive(link.href)
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-foreground/70 hover:text-foreground"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
+                    : "text-foreground/60 hover:text-foreground hover:bg-slate-100 dark:hover:bg-slate-800/50"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
+            <div className="ml-2 pl-2 border-l border-slate-200 dark:border-slate-700">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button & Theme Toggle */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="md:hidden flex items-center gap-3">
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-foreground/70 hover:text-foreground transition-colors"
+              className="p-2 rounded-lg text-foreground/60 hover:text-foreground hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all"
               aria-label="Toggle menu"
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -103,16 +105,16 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex flex-col gap-4 pt-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-slate-200/50 dark:border-slate-700/50">
+            <div className="flex flex-col gap-1 pt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors font-medium py-2 ${
+                  className={`px-4 py-2.5 rounded-lg text-sm transition-all font-medium ${
                     isActive(link.href)
-                      ? "text-blue-600 dark:text-blue-400"
-                      : "text-foreground/70 hover:text-foreground"
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
+                      : "text-foreground/60 hover:text-foreground hover:bg-slate-100 dark:hover:bg-slate-800/50"
                   }`}
                 >
                   {link.label}
