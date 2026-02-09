@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "Freelance Developer",
   ],
   authors: [{ name: "Ryan Sareen" }],
+  verification: {
+    google: "bBqx5L03X5a-nFB0y7-EXrcKf_znxlbfzlR5JunMQjg",
+  },
   openGraph: {
     title: "Ryan Sareen | Full-Stack Developer",
     description:
