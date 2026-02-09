@@ -25,7 +25,7 @@ const projects = [
       "Automated email notifications with Brevo",
     ],
     liveUrl: "https://recipe-journal-beryl.vercel.app",
-    githubUrl: "https://github.com/ryanssareen/recipe-journaal",
+    githubUrl: "https://github.com/ryanssareen/recipe-journal",
     icon: "🍳",
     image: "/projects/recipe-journal.png",
     number: "01",
