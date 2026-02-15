@@ -25,12 +25,12 @@ interface ProjectsProps {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <section id="projects" className="min-h-screen pt-24 pb-20 relative">
+    <section id="projects" className="min-h-screen pt-24 md:pt-28 pb-20 relative">
       {/* Hero header */}
-      <div className="relative overflow-hidden pb-16 px-6">
+      <div className="relative overflow-hidden pb-12 sm:pb-14 md:pb-16 px-4 sm:px-6">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-normal opacity-10 blur-3xl" />
-          <div className="absolute top-10 right-1/4 w-96 h-96 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply dark:mix-blend-normal opacity-10 blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-normal opacity-10 blur-3xl" />
+          <div className="absolute top-10 right-1/4 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply dark:mix-blend-normal opacity-10 blur-3xl" />
         </div>
 
         <div className="max-w-5xl mx-auto text-center">
@@ -39,12 +39,12 @@ export function Projects({ projects }: ProjectsProps) {
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse-soft" />
               {projects.length} Projects
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 sm:mb-6">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 My Work
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
               Each project is a full-stack application built from the ground up,
               combining modern frameworks with AI to solve real problems.
             </p>
@@ -60,7 +60,7 @@ export function Projects({ projects }: ProjectsProps) {
       </div>
 
       {/* Bottom CTA */}
-      <div className="max-w-5xl mx-auto px-6 pt-20 text-center animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 text-center animate-fade-in-up" style={{ animationDelay: "200ms" }}>
         <div className="inline-flex flex-col items-center gap-4">
           <p className="text-foreground/50 text-sm">
             More projects coming soon

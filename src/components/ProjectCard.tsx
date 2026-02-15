@@ -39,15 +39,15 @@ export function ProjectCard({
   const isEven = index % 2 === 0;
 
   return (
-    <div className={`relative py-16 md:py-24 bg-gradient-to-br ${lightBg} dark:${darkBg}`}>
+    <div className={`relative py-12 md:py-16 lg:py-24 bg-gradient-to-br ${lightBg} dark:${darkBg}`}>
       {/* Top separator line */}
       <div
         className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${gradient.replace("from-", "via-").split(" ")[0]} to-transparent opacity-30`}
       />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center ${
             !isEven ? "lg:[direction:rtl]" : ""
           }`}
         >
@@ -63,7 +63,7 @@ export function ProjectCard({
               />
 
               {/* Main visual card */}
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1">
+              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1">
                 {/* Screenshot */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -77,21 +77,21 @@ export function ProjectCard({
                   <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white dark:from-slate-800 to-transparent" />
 
                   {/* Live badge */}
-                  <div className="absolute top-4 left-4">
-                    <div className={`flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r ${gradient} rounded-full text-white text-xs font-semibold shadow-lg`}>
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                    <div className={`flex items-center gap-2 px-2.5 sm:px-3 py-1.5 bg-gradient-to-r ${gradient} rounded-full text-white text-[11px] sm:text-xs font-semibold shadow-lg`}>
                       <span className="w-2 h-2 rounded-full bg-white animate-pulse-soft" />
                       Live
                     </div>
                   </div>
 
                   {/* Project number */}
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-black/30 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-sm font-bold">
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 bg-black/30 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-xs sm:text-sm font-bold">
                     {number}
                   </div>
                 </div>
 
                 {/* Tech stack bar */}
-                <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/80 border-t border-slate-200/50 dark:border-slate-700/50">
+                <div className="px-4 sm:px-6 py-4 bg-slate-50 dark:bg-slate-800/80 border-t border-slate-200/50 dark:border-slate-700/50">
                   <div className="flex flex-wrap gap-2">
                     {techStack.map((tech) => (
                       <span
@@ -130,7 +130,7 @@ export function ProjectCard({
                   PROJECT {number}
                 </span>
                 <h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 leading-tight"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 leading-tight"
                   style={{ color: accentColor }}
                 >
                   {title}
@@ -138,7 +138,7 @@ export function ProjectCard({
               </div>
 
               {/* Description */}
-              <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
+              <p className="text-foreground/70 text-sm sm:text-base md:text-lg leading-relaxed">
                 {description}
               </p>
 
@@ -171,12 +171,12 @@ export function ProjectCard({
               </div>
 
               {/* Action buttons */}
-              <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 pt-2">
                 <a
                   href={liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm transition-all hover:scale-105 hover:shadow-xl bg-gradient-to-r ${gradient}`}
+                  className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm transition-all hover:scale-105 hover:shadow-xl bg-gradient-to-r ${gradient}`}
                 >
                   <span>View Live</span>
                   <svg
@@ -197,7 +197,7 @@ export function ProjectCard({
                   href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-foreground/70 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 transition-all hover:scale-105 bg-white/50 dark:bg-slate-800/50"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-foreground/70 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 transition-all hover:scale-105 bg-white/50 dark:bg-slate-800/50"
                 >
                   <svg
                     className="w-4 h-4"

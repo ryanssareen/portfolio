@@ -109,10 +109,10 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen pt-24 pb-20 px-6 bg-slate-50/50 dark:bg-slate-900/30"
+      className="min-h-screen pt-24 pb-20 px-4 sm:px-6 bg-slate-50/50 dark:bg-slate-900/30"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <div className="animate-fade-in-up">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-medium mb-6">
               <svg
@@ -130,19 +130,19 @@ export function Skills() {
               </svg>
               Technical Expertise
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6">
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Skills & Expertise
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-foreground/60 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-foreground/60 max-w-3xl mx-auto">
               Real project stack distribution based on how you actually build:
               vibe coding flow, frameworks, AI integration, and backend usage.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <article
               key={category.category}
@@ -150,7 +150,7 @@ export function Skills() {
               style={{ animationDelay: `${categoryIndex * 140}ms` }}
             >
               <div
-                className={`bg-gradient-to-r ${category.gradient} p-6 relative overflow-hidden`}
+                className={`bg-gradient-to-r p-5 sm:p-6 ${category.gradient} relative overflow-hidden`}
               >
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
                 <div className="relative flex items-center gap-3">
@@ -158,21 +158,21 @@ export function Skills() {
                     {category.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-lg sm:text-xl font-bold text-white">
                       {category.category}
                     </h3>
-                    <p className="text-xs text-white/90 mt-1">
+                    <p className="text-xs sm:text-sm md:text-xs text-white/90 mt-1 leading-relaxed">
                       {category.summary}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex flex-col sm:flex-row gap-6 sm:gap-5">
-                  <div className="sm:w-40 sm:shrink-0">
+              <div className="p-5 sm:p-6">
+                <div className="flex flex-col sm:flex-row gap-5 sm:gap-5">
+                  <div className="sm:w-36 md:w-40 sm:shrink-0">
                     <div
-                      className="mx-auto h-36 w-36 rounded-full relative border border-white/50 dark:border-slate-700/80 shadow-sm"
+                      className="mx-auto h-28 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 rounded-full relative border border-white/50 dark:border-slate-700/80 shadow-sm"
                       style={{
                         backgroundImage: getPieGradient(category.slices),
                       }}
@@ -186,14 +186,14 @@ export function Skills() {
                     </div>
                   </div>
 
-                  <div className="flex-1 space-y-4">
+                  <div className="flex-1 space-y-3 sm:space-y-4">
                     <ul className="space-y-2">
                       {category.slices.map((slice) => (
                         <li
                           key={slice.label}
-                          className="flex items-center justify-between gap-3 text-sm"
+                          className="flex items-center justify-between gap-3 text-xs sm:text-sm"
                         >
-                          <span className="flex items-center gap-2 text-foreground/80">
+                          <span className="flex items-center gap-2 text-foreground/80 leading-relaxed pr-2">
                             <span
                               className="w-2.5 h-2.5 rounded-full"
                               style={{ backgroundColor: slice.color }}
@@ -229,7 +229,7 @@ export function Skills() {
           className="mt-14 text-center animate-fade-in-up"
           style={{ animationDelay: "600ms" }}
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-full border border-blue-500/20 dark:border-blue-500/30">
+          <div className="inline-flex max-w-full items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-full border border-blue-500/20 dark:border-blue-500/30">
             <svg
               className="w-5 h-5 text-blue-600 dark:text-blue-400"
               fill="none"
@@ -243,7 +243,7 @@ export function Skills() {
                 d="M13 10V3L4 14h7v7l9-11h-7z"
               />
             </svg>
-            <span className="text-sm font-semibold text-foreground/70">
+            <span className="text-xs sm:text-sm font-semibold text-foreground/70 text-left sm:text-center">
               Stack reflects real shipped usage, not generic skill lists
             </span>
           </div>
