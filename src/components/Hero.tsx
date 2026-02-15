@@ -46,7 +46,7 @@ export function Hero() {
           }`}
         >
           <p className="text-lg md:text-xl text-foreground/60 mb-4 font-medium">
-            Hi, I&apos;m Ryan Sareen
+            Hi, I&apos;m Ryan Singh Sareen
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">

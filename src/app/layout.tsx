@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ryan Sareen | Full-Stack Developer",
+  title: "Ryan Singh Sareen | Full-Stack Developer",
   description:
     "Full-stack developer building modern web apps with React, Next.js, and AI integration. View my portfolio of projects including Recipe Journal, Workout Tracker, and Finance Manager.",
   keywords: [
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "AI Integration",
     "Freelance Developer",
   ],
-  authors: [{ name: "Ryan Sareen" }],
+  authors: [{ name: "Ryan Singh Sareen" }],
   verification: {
     google: "bBqx5L03X5a-nFB0y7-EXrcKf_znxlbfzlR5JunMQjg",
   },
   openGraph: {
-    title: "Ryan Sareen | Full-Stack Developer",
+    title: "Ryan Singh Sareen | Full-Stack Developer",
     description:
       "Full-stack developer building modern web apps with React, Next.js, and AI integration.",
     type: "website",

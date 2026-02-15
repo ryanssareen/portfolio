@@ -46,7 +46,7 @@ export function Navigation() {
             href="/"
             className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            Ryan Sareen
+            Ryan Singh Sareen
           </Link>
 
           {/* Desktop Navigation Links */}
