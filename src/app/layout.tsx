@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: SITE_NAME }],
   verification: {
-    google: "bBqx5L03X5a-nFB0y7-EXrcKf_znxlbfzlR5JunMQjg",
+    google: "BNFyHY449rHfrrlUMoZ5_jvjdQ9n33pX_ZgrTdk5hIc",
   },
   robots: {
     index: true,
