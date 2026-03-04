@@ -31,7 +31,7 @@ const projects = [
     number: "01",
   },
   {
-    title: "Workout Tracker",
+    title: "The Daily Athlete",
     accentColor: "#ef4444",
     gradient: "from-red-500 to-rose-600",
     lightBg: "from-red-50 to-rose-50",
@@ -39,12 +39,12 @@ const projects = [
     techStack: ["Next.js", "React", "Tailwind CSS", "Firebase"],
     apis: ["Groq (AI Chatbot)", "Brevo", "Firebase Auth"],
     description:
-      "Track your workouts with an AI fitness assistant. Log exercises, monitor your progress over time, and get personalized fitness advice from an intelligent chatbot.",
+      "A training app for self-disciplined athletes. Track workouts, build streaks, sync with Strava, and get AI-powered fitness coaching — all free during early access.",
     features: [
       "Firebase authentication & real-time sync",
-      "Detailed workout logging with history",
-      "Visual progress tracking & analytics",
-      "AI chatbot for personalized fitness advice",
+      "Multi-sport workout logging (run, swim, bike, strength)",
+      "Streak tracking & progress analytics",
+      "AI chatbot for personalised fitness advice",
     ],
     liveUrl: "https://ryanssareen-workout-site-k6vl.vercel.app",
     githubUrl: "https://github.com/ryanssareen/workout-site",
