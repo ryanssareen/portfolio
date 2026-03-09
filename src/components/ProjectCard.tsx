@@ -18,6 +18,7 @@ interface ProjectCardProps {
   image: string;
   number: string;
   index: number;
+  featured?: boolean;
 }
 
 export function ProjectCard({
@@ -35,6 +36,7 @@ export function ProjectCard({
   image,
   number,
   index,
+  featured = false,
 }: ProjectCardProps) {
   const isEven = index % 2 === 0;
 
@@ -42,7 +44,7 @@ export function ProjectCard({
   const displayUrl = liveUrl.replace(/^https?:\/\//, "");
 
   return (
-    <div className={`relative py-16 md:py-20 lg:py-28 bg-gradient-to-br ${lightBg} dark:${darkBg}`}>
+    <div className={`relative ${featured ? "py-20 md:py-28 lg:py-36" : "py-16 md:py-20 lg:py-28"} bg-gradient-to-br ${lightBg} dark:${darkBg}`}>
       {/* Separator */}
       <div className="absolute top-0 left-0 right-0 h-px bg-slate-200/60 dark:bg-white/5" />
 
@@ -130,11 +132,20 @@ export function ProjectCard({
             <div className="space-y-6">
               {/* Label + title */}
               <div>
+                {featured && (
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase mb-3 text-white shadow-lg"
+                    style={{ background: `linear-gradient(to right, ${accentColor}, ${accentColor}cc)` }}>
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    Main Project
+                  </div>
+                )}
                 <p className="text-xs font-mono font-bold tracking-[0.2em] uppercase opacity-40 mb-2" style={{ color: accentColor }}>
                   Project {number}
                 </p>
                 <h2
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+                  className={`${featured ? "text-4xl sm:text-5xl md:text-6xl" : "text-3xl sm:text-4xl md:text-5xl"} font-bold leading-tight`}
                   style={{ color: accentColor }}
                 >
                   {title}
