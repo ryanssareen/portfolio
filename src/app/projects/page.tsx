@@ -9,28 +9,6 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    title: "Recipe Journal",
-    accentColor: "#22c55e",
-    gradient: "from-green-500 to-emerald-600",
-    lightBg: "from-green-50 to-emerald-50",
-    darkBg: "from-green-950/30 to-emerald-950/30",
-    techStack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
-    apis: ["Groq (AI)", "Brevo (Email)"],
-    description:
-      "A smart recipe app with AI-powered recipe suggestions and full CRUD functionality. Save your favorite recipes, generate new ones with AI, and organize your culinary journey.",
-    features: [
-      "User authentication with secure sessions",
-      "Full CRUD: save, edit & delete recipes",
-      "AI-powered recipe generation via Groq",
-      "Automated email notifications with Brevo",
-    ],
-    liveUrl: "https://recipe-journal-beryl.vercel.app",
-    githubUrl: "https://github.com/ryanssareen/recipe-journal",
-    icon: "🍳",
-    image: "/projects/recipe-journal.png",
-    number: "01",
-  },
-  {
     title: "The Daily Athlete",
     accentColor: "#ef4444",
     gradient: "from-red-500 to-rose-600",
@@ -50,6 +28,28 @@ const projects = [
     githubUrl: "https://github.com/ryanssareen/workout-site",
     icon: "💪",
     image: "/projects/workout-tracker.png",
+    number: "01",
+  },
+  {
+    title: "Recipe Journal",
+    accentColor: "#22c55e",
+    gradient: "from-green-500 to-emerald-600",
+    lightBg: "from-green-50 to-emerald-50",
+    darkBg: "from-green-950/30 to-emerald-950/30",
+    techStack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
+    apis: ["Groq (AI)", "Brevo (Email)"],
+    description:
+      "A smart recipe app with AI-powered recipe suggestions and full CRUD functionality. Save your favorite recipes, generate new ones with AI, and organize your culinary journey.",
+    features: [
+      "User authentication with secure sessions",
+      "Full CRUD: save, edit & delete recipes",
+      "AI-powered recipe generation via Groq",
+      "Automated email notifications with Brevo",
+    ],
+    liveUrl: "https://recipe-journal-beryl.vercel.app",
+    githubUrl: "https://github.com/ryanssareen/recipe-journal",
+    icon: "🍳",
+    image: "/projects/recipe-journal.png",
     number: "02",
   },
   {
