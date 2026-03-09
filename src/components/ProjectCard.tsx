@@ -14,6 +14,7 @@ interface ProjectCardProps {
   features: string[];
   liveUrl: string;
   githubUrl: string;
+  portfolioUrl?: string;
   icon: string;
   image: string;
   number: string;
@@ -33,6 +34,7 @@ export function ProjectCard({
   features,
   liveUrl,
   githubUrl,
+  portfolioUrl,
   image,
   number,
   index,
@@ -184,6 +186,19 @@ export function ProjectCard({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
+                {portfolioUrl && (
+                  <a
+                    href={portfolioUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-foreground/70 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:-translate-y-0.5 bg-white/50 dark:bg-white/[0.02] transition-all"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                    </svg>
+                    Portfolio
+                  </a>
+                )}
                 <a
                   href={githubUrl}
                   target="_blank"

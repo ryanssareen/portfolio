@@ -15,6 +15,7 @@ interface Project {
   features: string[];
   liveUrl: string;
   githubUrl: string;
+  portfolioUrl?: string;
   icon: string;
   image: string;
   number: string;
