@@ -25,11 +25,13 @@ const projects = [
       "AI chatbot for personalised fitness advice",
     ],
     liveUrl: "https://ryanssareen-workout-site-k6vl.vercel.app",
+
     portfolioUrl: "https://ryanssareen-workout-site-k6vl.vercel.app/portfolio",
     githubUrl: "https://github.com/ryanssareen/workout-site",
     icon: "💪",
     image: "/projects/workout-tracker.png",
     number: "01",
+
     featured: true,
   },
   {
