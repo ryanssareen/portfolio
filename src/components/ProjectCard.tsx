@@ -18,6 +18,7 @@ interface ProjectCardProps {
   image: string;
   number: string;
   index: number;
+  featured?: boolean;
 }
 
 export function ProjectCard({
