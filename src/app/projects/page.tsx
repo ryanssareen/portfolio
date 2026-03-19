@@ -27,7 +27,7 @@ const projects = [
     liveUrl: "https://thedailyathlete.in",
     githubUrl: "https://github.com/ryanssareen/workout-site",
     icon: "💪",
-    image: "/projects/workout-tracker.png",
+    image: "/projects/daily-athlete.png",
     number: "01",
   },
   {
