@@ -24,7 +24,7 @@ const projects = [
       "Streak tracking & progress analytics",
       "AI chatbot for personalised fitness advice",
     ],
-    liveUrl: "https://ryanssareen-workout-site-k6vl.vercel.app",
+    liveUrl: "https://thedailyathlete.in",
     githubUrl: "https://github.com/ryanssareen/workout-site",
     icon: "💪",
     image: "/projects/workout-tracker.png",
