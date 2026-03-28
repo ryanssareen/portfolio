@@ -23,3 +23,4 @@ These defaults are optimized for AI coding agents (and humans) working on apps t
 - For durable agent loops or untrusted code: use Workflow (pause/resume/state) + Sandbox; use Vercel MCP for secure infra access
 <!-- VERCEL BEST PRACTICES END -->
 <!-- deploy test -->
+
