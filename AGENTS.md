@@ -24,3 +24,4 @@ These defaults are optimized for AI coding agents (and humans) working on apps t
 <!-- VERCEL BEST PRACTICES END -->
 <!-- deploy test -->
 
+ 
