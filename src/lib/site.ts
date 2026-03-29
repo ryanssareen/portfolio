@@ -18,5 +18,5 @@ export const SITE_URL = stripTrailingSlash(toHttpsUrl(fromEnv));
 export const SITE_NAME = "Ryan Singh Sareen";
 export const SITE_TITLE = `${SITE_NAME} | Full-Stack Developer`;
 export const SITE_DESCRIPTION =
-  "Full-stack developer building modern web apps with React, Next.js, and AI integration. View my portfolio of projects including Recipe Journal, Workout Tracker, and Finance Manager.";
+  "Full-stack developer building modern web apps with React, Next.js, and AI integration. View my portfolio of projects including The Daily Athlete, Find Me a Race, Recipe Journal, and Finance Manager.";
 

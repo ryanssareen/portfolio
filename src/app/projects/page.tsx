@@ -31,6 +31,28 @@ const projects = [
     number: "01",
   },
   {
+    title: "Find Me a Race",
+    accentColor: "#f97316",
+    gradient: "from-orange-500 to-amber-600",
+    lightBg: "from-orange-50 to-amber-50",
+    darkBg: "from-orange-950/30 to-amber-950/30",
+    techStack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
+    apis: ["Geolocation", "Race Aggregation"],
+    description:
+      "India's race directory — discover 200+ marathons, trail runs, ultras, and 5Ks across the country. Search by city, distance, or use location-based search to find races near you.",
+    features: [
+      "Search races by city, state, or race name",
+      "Browse by distance: 5K, half marathon, marathon, ultra & trail",
+      "Location-based 'Near me' race discovery",
+      "One-click registration links for every race",
+    ],
+    liveUrl: "https://findmearace.com",
+    githubUrl: "https://github.com/ryanssareen/find-me-a-race",
+    icon: "🏃",
+    image: "/projects/find-me-a-race.png",
+    number: "02",
+  },
+  {
     title: "Recipe Journal",
     accentColor: "#22c55e",
     gradient: "from-green-500 to-emerald-600",
@@ -50,7 +72,7 @@ const projects = [
     githubUrl: "https://github.com/ryanssareen/recipe-journal",
     icon: "🍳",
     image: "/projects/recipe-journal.png",
-    number: "02",
+    number: "03",
   },
   {
     title: "Finance Manager",
@@ -72,7 +94,7 @@ const projects = [
     githubUrl: "https://github.com/ryanssareen/finance-app",
     icon: "💰",
     image: "/projects/finance-manager.png",
-    number: "03",
+    number: "04",
   },
 ];
 
