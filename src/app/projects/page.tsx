@@ -96,6 +96,28 @@ const projects = [
     image: "/projects/finance-manager.png",
     number: "04",
   },
+  {
+    title: "Bank Brief",
+    accentColor: "#1e3a5f",
+    gradient: "from-slate-700 to-blue-900",
+    lightBg: "from-slate-50 to-blue-50",
+    darkBg: "from-slate-950/30 to-blue-950/30",
+    techStack: ["Next.js", "React", "Tailwind CSS", "Firebase"],
+    apis: ["Firebase Auth", "Google Sign-In"],
+    description:
+      "Your finances, simplified. A personal banking dashboard to manage multiple bank accounts, track income, expenses, and savings, and monitor fixed deposits — all in one place.",
+    features: [
+      "Portfolio overview with income, expenses & savings",
+      "Multi-bank account management with balance tracking",
+      "Fixed deposit tracking & management",
+      "Dark/light theme with user preferences",
+    ],
+    liveUrl: "https://bank-brief-phi.vercel.app",
+    githubUrl: "https://github.com/ryanssareen/bank-brief",
+    icon: "🏦",
+    image: "/projects/bank-brief.png",
+    number: "05",
+  },
 ];
 
 export default function ProjectsPage() {
