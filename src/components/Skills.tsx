@@ -1,71 +1,37 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTheme } from "./ThemeProvider";
 
 const aiTools = [
   { name: "Claude Code", icon: "/icons/claude.svg", description: "Primary coding assistant" },
-  { name: "Cursor", icon: "/icons/cursor.svg", description: "AI-powered IDE" },
-  { name: "v0 by Vercel", icon: "/icons/v0.svg", description: "UI generation" },
+  { name: "Codex", icon: "/icons/codex.svg", description: "OpenAI coding agent" },
 ];
 
 type Skill = {
   name: string;
   icon: string;
-  level: number;
-  label: string;
 };
 
 const skills: Skill[] = [
-  { name: "React",        icon: "⚛️",  level: 95, label: "Expert"     },
-  { name: "Next.js",      icon: "▲",   level: 95, label: "Expert"     },
-  { name: "TypeScript",   icon: "TS",  level: 90, label: "Advanced"   },
-  { name: "Tailwind CSS", icon: "💨",  level: 95, label: "Expert"     },
-  { name: "Groq API",     icon: "⚡",  level: 90, label: "Advanced"   },
-  { name: "Firebase",     icon: "🔥",  level: 85, label: "Advanced"   },
-  { name: "Supabase",     icon: "🟩",  level: 80, label: "Proficient" },
-  { name: "Node.js",      icon: "🟢",  level: 80, label: "Proficient" },
+  { name: "React",        icon: "⚛️" },
+  { name: "Next.js",      icon: "▲"  },
+  { name: "TypeScript",   icon: "TS" },
+  { name: "Tailwind CSS", icon: "💨" },
+  { name: "Groq API",     icon: "⚡" },
+  { name: "Firebase",     icon: "🔥" },
+  { name: "Supabase",     icon: "🟩" },
+  { name: "Node.js",      icon: "🟢" },
 ];
 
-function SkillBar({ skill, index }: { skill: Skill; index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
+function SkillCard({ skill, index }: { skill: Skill; index: number }) {
   return (
     <div
-      ref={ref}
-      className="group relative bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-2xl p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-white/[0.08] hover:border-white/15 hover:shadow-[0_8px_40px_rgba(99,102,241,0.3)] transition-all duration-300 animate-fade-in-up"
+      className="group relative flex items-center gap-4 bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-2xl p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-white/[0.08] hover:border-white/15 hover:shadow-[0_8px_40px_rgba(99,102,241,0.3)] transition-all duration-300 animate-fade-in-up"
       style={{ animationDelay: `${index * 65}ms` }}
     >
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-2xl leading-none">{skill.icon}</span>
-        <span className="text-[10px] font-semibold tracking-widest uppercase text-white/30">
-          {skill.label}
-        </span>
-      </div>
-
-      <div className="flex items-baseline justify-between mb-2.5">
-        <p className="text-base font-semibold text-white">{skill.name}</p>
-        <span className="text-sm font-semibold tabular-nums text-white/35">{skill.level}%</span>
-      </div>
-
-      <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-[width] duration-1000 ease-out"
-          style={{ width: visible ? `${skill.level}%` : "0%" }}
-        />
-      </div>
+      <span className="text-2xl leading-none">{skill.icon}</span>
+      <p className="text-base font-semibold text-white">{skill.name}</p>
     </div>
   );
 }
@@ -145,7 +111,7 @@ export function Skills() {
           <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
             Tools I Use to Write Code
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-2xl mx-auto">
             {aiTools.map((tool, i) => (
               <div
                 key={tool.name}
@@ -169,7 +135,7 @@ export function Skills() {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {skills.map((skill, i) => (
-              <SkillBar key={skill.name} skill={skill} index={i} />
+              <SkillCard key={skill.name} skill={skill} index={i} />
             ))}
           </div>
         </div>
