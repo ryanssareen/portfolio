@@ -43,13 +43,15 @@ export function Skills() {
   useEffect(() => {
     prevTheme.current = theme;
     if (theme === "light") setTheme("dark");
-  }, [theme, setTheme]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     return () => {
       if (prevTheme.current === "light") setTheme("light");
     };
-  }, [setTheme]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section
