@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const stack = [
-  { name: "React", icon: "/icons/react.svg" },
-  { name: "Next.js", icon: "/icons/nextjs.svg" },
-  { name: "TypeScript", icon: "/icons/typescript.svg" },
-  { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg" },
-  { name: "Firebase", icon: "/icons/firebase.svg" },
-  { name: "Supabase", icon: "/icons/supabase.svg" },
+  { name: "React", icon: "/icons/react.svg", invert: false },
+  { name: "Next.js", icon: "/icons/nextjs.svg", invert: true },
+  { name: "TypeScript", icon: "/icons/typescript.svg", invert: false },
+  { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg", invert: false },
+  { name: "Firebase", icon: "/icons/firebase.svg", invert: false },
+  { name: "Supabase", icon: "/icons/supabase.svg", invert: false },
 ];
 
 export function StackTeaser() {
@@ -43,7 +43,7 @@ export function StackTeaser() {
                 key={tech.name}
                 className="flex flex-col items-center gap-2.5 p-4 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200/60 dark:border-white/8"
               >
-                <img src={tech.icon} alt={tech.name} className="w-7 h-7" />
+                <img src={tech.icon} alt={tech.name} className={`w-7 h-7 ${tech.invert ? "dark:invert" : ""}`} />
                 <span className="text-xs font-medium text-foreground/50">{tech.name}</span>
               </div>
             ))}

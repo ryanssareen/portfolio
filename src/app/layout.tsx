@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
 import {
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -80,8 +82,9 @@ export default function RootLayout({
         <ThemeProvider>
           <Navigation />
           <main className="min-h-screen overflow-x-hidden">
-            {children}
+            <PageTransition>{children}</PageTransition>
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -123,15 +123,6 @@ export function Contact() {
           </a>
         </div>
 
-        {/* Footer */}
-        <div className="animate-fade-in-up pt-6 sm:pt-8 border-t border-slate-200/50 dark:border-slate-700/50" style={{ animationDelay: "500ms" }}>
-          <p className="text-foreground/40 text-sm">
-            &copy; {new Date().getFullYear()} Ryan Singh Sareen
-          </p>
-          <p className="text-foreground/30 text-xs mt-1.5">
-            Built with Next.js &middot; Tailwind CSS &middot; Claude Code
-          </p>
-        </div>
       </div>
     </section>
   );
