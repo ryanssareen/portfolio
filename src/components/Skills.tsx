@@ -14,14 +14,14 @@ type Skill = {
 };
 
 const skills: Skill[] = [
-  { name: "React",        icon: "⚛️" },
-  { name: "Next.js",      icon: "▲"  },
-  { name: "TypeScript",   icon: "TS" },
-  { name: "Tailwind CSS", icon: "💨" },
-  { name: "Groq API",     icon: "⚡" },
-  { name: "Firebase",     icon: "🔥" },
-  { name: "Supabase",     icon: "🟩" },
-  { name: "Node.js",      icon: "🟢" },
+  { name: "React",        icon: "/icons/react.svg" },
+  { name: "Next.js",      icon: "/icons/nextjs.svg" },
+  { name: "TypeScript",   icon: "/icons/typescript.svg" },
+  { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg" },
+  { name: "Groq API",     icon: "/icons/groq.svg" },
+  { name: "Firebase",     icon: "/icons/firebase.svg" },
+  { name: "Supabase",     icon: "/icons/supabase.svg" },
+  { name: "Node.js",      icon: "/icons/nodejs.svg" },
 ];
 
 function SkillCard({ skill, index }: { skill: Skill; index: number }) {
@@ -30,7 +30,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
       className="group relative flex items-center gap-4 bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-2xl p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-white/[0.08] hover:border-white/15 hover:shadow-[0_8px_40px_rgba(99,102,241,0.3)] transition-all duration-300 animate-fade-in-up"
       style={{ animationDelay: `${index * 65}ms` }}
     >
-      <span className="text-2xl leading-none">{skill.icon}</span>
+      <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
       <p className="text-base font-semibold text-white">{skill.name}</p>
     </div>
   );
