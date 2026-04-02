@@ -1,6 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "./ThemeProvider";
+
+const aiTools = [
+  { name: "Claude Code", icon: "/icons/claude.svg", description: "Primary coding assistant" },
+  { name: "Cursor", icon: "/icons/cursor.svg", description: "AI-powered IDE" },
+  { name: "v0 by Vercel", icon: "/icons/v0.svg", description: "UI generation" },
+];
 
 type Skill = {
   name: string;
@@ -14,14 +21,13 @@ const skills: Skill[] = [
   { name: "Next.js",      icon: "▲",   level: 95, label: "Expert"     },
   { name: "TypeScript",   icon: "TS",  level: 90, label: "Advanced"   },
   { name: "Tailwind CSS", icon: "💨",  level: 95, label: "Expert"     },
-  { name: "Claude AI",    icon: "🧠",  level: 95, label: "Expert"     },
   { name: "Groq API",     icon: "⚡",  level: 90, label: "Advanced"   },
   { name: "Firebase",     icon: "🔥",  level: 85, label: "Advanced"   },
   { name: "Supabase",     icon: "🟩",  level: 80, label: "Proficient" },
   { name: "Node.js",      icon: "🟢",  level: 80, label: "Proficient" },
 ];
 
-function SkillCard({ skill, index }: { skill: Skill; index: number }) {
+function SkillBar({ skill, index }: { skill: Skill; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -42,7 +48,6 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
       className="group relative bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-2xl p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-white/[0.08] hover:border-white/15 hover:shadow-[0_8px_40px_rgba(99,102,241,0.3)] transition-all duration-300 animate-fade-in-up"
       style={{ animationDelay: `${index * 65}ms` }}
     >
-      {/* Icon */}
       <div className="flex items-center justify-between mb-4">
         <span className="text-2xl leading-none">{skill.icon}</span>
         <span className="text-[10px] font-semibold tracking-widest uppercase text-white/30">
@@ -50,13 +55,11 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
         </span>
       </div>
 
-      {/* Skill name + percentage */}
       <div className="flex items-baseline justify-between mb-2.5">
         <p className="text-base font-semibold text-white">{skill.name}</p>
         <span className="text-sm font-semibold tabular-nums text-white/35">{skill.level}%</span>
       </div>
 
-      {/* Bar track */}
       <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
         <div
           className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-[width] duration-1000 ease-out"
@@ -68,12 +71,26 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
 }
 
 export function Skills() {
+  const { theme, setTheme } = useTheme();
+  const prevTheme = useRef(theme);
+
+  useEffect(() => {
+    prevTheme.current = theme;
+    if (theme === "light") setTheme("dark");
+  }, [theme, setTheme]);
+
+  useEffect(() => {
+    return () => {
+      if (prevTheme.current === "light") setTheme("light");
+    };
+  }, [setTheme]);
+
   return (
     <section
       id="skills"
       className="relative min-h-screen pt-24 pb-24 px-4 sm:px-6 bg-gradient-to-b from-slate-950 via-[#07091f] to-slate-950 overflow-hidden"
     >
-      {/* Floating background blobs — subtle texture, not focal points */}
+      {/* Background blobs */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-indigo-600/8 blur-3xl animate-blob"
@@ -94,23 +111,67 @@ export function Skills() {
         {/* Header */}
         <div className="text-center mb-16 md:mb-20 animate-fade-in-up">
           <p className="text-xs font-semibold tracking-widest uppercase text-white/30 mb-4">
-            Technical Expertise
+            How I Build
           </p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-5">
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Skills &amp; Stack
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-white/40 max-w-xl mx-auto">
-            Real tools I reach for — not a generic list padded to look impressive.
-          </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {skills.map((skill, i) => (
-            <SkillCard key={skill.name} skill={skill} index={i} />
-          ))}
+        {/* AI Disclaimer */}
+        <div className="mb-16 md:mb-20 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+          <div className="relative max-w-2xl mx-auto text-center p-8 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-lg">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-wider uppercase mb-5">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Full Transparency
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              I write code with AI
+            </h3>
+            <p className="text-white/50 text-sm sm:text-base leading-relaxed max-w-lg mx-auto">
+              Every project in my portfolio was built using AI coding tools.
+              I use AI to move fast, ship real products, and focus on solving
+              problems — not typing boilerplate.
+            </p>
+          </div>
+        </div>
+
+        {/* AI Tools */}
+        <div className="mb-16 md:mb-20">
+          <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+            Tools I Use to Write Code
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
+            {aiTools.map((tool, i) => (
+              <div
+                key={tool.name}
+                className="group relative flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-lg hover:bg-white/[0.08] hover:border-white/15 transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${(i + 3) * 65}ms` }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                  <img src={tool.icon} alt={tool.name} className="w-7 h-7" />
+                </div>
+                <p className="text-sm font-semibold text-white">{tool.name}</p>
+                <p className="text-xs text-white/35">{tool.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div>
+          <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+            Tech Stack
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {skills.map((skill, i) => (
+              <SkillBar key={skill.name} skill={skill} index={i} />
+            ))}
+          </div>
         </div>
 
         {/* Footer note */}
