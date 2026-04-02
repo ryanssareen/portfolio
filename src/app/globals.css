@@ -104,6 +104,21 @@ html {
   to   { transform: rotate(360deg); }
 }
 
+@keyframes slide-out-left {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-60px); }
+}
+
+@keyframes slide-out-right {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(60px); }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .animate-blob            { animation: blob 7s infinite; }
 .animation-delay-2000    { animation-delay: 2s; }
 .animation-delay-4000    { animation-delay: 4s; }
@@ -116,6 +131,9 @@ html {
 .animate-width-grow      { animation: width-grow 1s ease-out forwards; }
 .animate-float           { animation: float 3s ease-in-out infinite; }
 .animate-spin-slow       { animation: spin-slow 8s linear infinite; }
+.animate-slide-out-left  { animation: slide-out-left 0.3s ease-in forwards; }
+.animate-slide-out-right { animation: slide-out-right 0.3s ease-in forwards; }
+.animate-slide-in        { animation: slide-in 0.4s ease-out forwards; }
 .animate-shimmer {
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
