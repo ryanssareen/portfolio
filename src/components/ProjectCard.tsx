@@ -80,21 +80,6 @@ export function ProjectCard({
                   </div>
                 </div>
 
-                {/* Tech stack bar */}
-                <div className="px-5 py-3.5 bg-white dark:bg-slate-900/80 border-t border-slate-200/60 dark:border-white/5">
-                  <div className="flex flex-wrap gap-1.5">
-                    {techStack.map((tech) => (
-                      <span key={tech} className="px-2.5 py-1 text-[11px] rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">
-                        {tech}
-                      </span>
-                    ))}
-                    {apis.map((api) => (
-                      <span key={api} className="px-2.5 py-1 text-[11px] rounded-full border border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500 font-medium">
-                        {api}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -122,6 +107,20 @@ export function ProjectCard({
               <p className="text-foreground/60 text-sm sm:text-base leading-relaxed">
                 {description}
               </p>
+
+              {/* Tech stack */}
+              <div className="flex flex-wrap gap-1.5">
+                {techStack.map((tech) => (
+                  <span key={tech} className="px-2.5 py-1 text-[11px] rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">
+                    {tech}
+                  </span>
+                ))}
+                {apis.map((api) => (
+                  <span key={api} className="px-2.5 py-1 text-[11px] rounded-full border border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500 font-medium">
+                    {api}
+                  </span>
+                ))}
+              </div>
 
               {/* Features */}
               <ul className="space-y-2.5">

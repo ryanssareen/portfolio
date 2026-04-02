@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const stats = [
-  { value: "3",  label: "Projects Shipped" },
+  { value: "5",  label: "Projects Shipped" },
   { value: "AI", label: "Powered Apps"      },
   { value: "∞",  label: "Curiosity"         },
 ];
