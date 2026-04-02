@@ -4,7 +4,7 @@ import { Projects } from "@/components/Projects";
 export const metadata: Metadata = {
   title: "Projects | Ryan Singh Sareen",
   description:
-    "View my portfolio of AI-powered web applications including Recipe Journal, Workout Tracker, and Finance Manager.",
+    "View my portfolio of 5 AI-powered web applications across fitness, finance, and learning — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, and Recipe Journal.",
 };
 
 const categories = [
