@@ -97,35 +97,25 @@ export function Projects({ categories }: ProjectsProps) {
       ? "animate-slide-out-right"
       : "";
 
-  const enterClass = !direction
-    ? "animate-slide-in"
-    : "";
+  const enterClass = !direction ? "animate-slide-in" : "";
 
   return (
     <section id="projects" className="min-h-screen pt-24 md:pt-28 pb-20 relative">
-      {/* Hero header */}
-      <div className="relative overflow-hidden pb-10 sm:pb-12 px-4 sm:px-6">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-normal opacity-10 blur-3xl" />
-          <div className="absolute top-10 right-1/4 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply dark:mix-blend-normal opacity-10 blur-3xl" />
-        </div>
-
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse-soft" />
-              {totalProjects} Projects
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 sm:mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                My Work
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-              Each project is a full-stack application built from the ground up,
-              combining modern frameworks with AI to solve real problems.
-            </p>
+      {/* Header */}
+      <div className="px-4 sm:px-6 pb-8 sm:pb-10">
+        <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse-soft" />
+            {totalProjects} Projects
           </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              My Work
+            </span>
+          </h1>
+          <p className="text-sm sm:text-base text-foreground/50 max-w-lg mx-auto">
+            Full-stack applications built from the ground up with modern frameworks and AI.
+          </p>
         </div>
       </div>
 
@@ -133,18 +123,16 @@ export function Projects({ categories }: ProjectsProps) {
       <div className="sticky top-16 z-30 bg-background/80 backdrop-blur-xl border-b border-slate-200/60 dark:border-white/5">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="relative flex gap-1 py-2 overflow-x-auto scrollbar-hide">
-            {/* Sliding indicator */}
             <div
               className="absolute bottom-2 h-[calc(100%-16px)] rounded-xl bg-slate-100 dark:bg-white/10 transition-all duration-300 ease-out"
               style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
             />
-
             {categories.map((category, i) => (
               <button
                 key={category.name}
                 ref={(el) => { tabRefs.current[i] = el; }}
                 onClick={() => goTo(i)}
-                className={`relative z-10 flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-medium whitespace-nowrap transition-colors duration-200 ${
+                className={`relative z-10 flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-colors duration-200 ${
                   active === i
                     ? "text-foreground"
                     : "text-foreground/40 hover:text-foreground/70"
@@ -169,14 +157,12 @@ export function Projects({ categories }: ProjectsProps) {
 
       {/* Category description */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-2">
-        <p
-          className={`text-center text-foreground/50 text-sm sm:text-base ${enterClass}`}
-        >
+        <p className={`text-center text-foreground/45 text-sm ${enterClass}`}>
           {categories[active].description}
         </p>
       </div>
 
-      {/* Swipable project area */}
+      {/* Project cards */}
       <div
         ref={containerRef}
         onTouchStart={handleTouchStart}
@@ -185,7 +171,7 @@ export function Projects({ categories }: ProjectsProps) {
         className="relative overflow-hidden"
       >
         <div className={`${isAnimating ? exitClass : enterClass}`}>
-          <div className="space-y-0">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 space-y-6">
             {categories[active].projects.map((project, index) => (
               <ProjectCard key={project.title} {...project} index={index} />
             ))}
@@ -193,62 +179,41 @@ export function Projects({ categories }: ProjectsProps) {
         </div>
       </div>
 
-      {/* Page dots */}
-      <div className="flex items-center justify-center gap-2 pt-10">
-        {categories.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            className={`rounded-full transition-all duration-300 ${
-              active === i
-                ? "w-8 h-2.5 bg-gradient-to-r from-blue-500 to-purple-500"
-                : "w-2.5 h-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Navigation arrows (desktop) */}
-      <div className="hidden sm:flex items-center justify-center gap-4 pt-6">
+      {/* Page dots + arrows */}
+      <div className="flex items-center justify-center gap-4 pt-8">
         <button
           onClick={() => active > 0 && goTo(active - 1)}
           disabled={active === 0}
-          className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-foreground/50 hover:text-foreground hover:border-slate-400 dark:hover:border-slate-500 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+          className="hidden sm:block p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-foreground/40 hover:text-foreground hover:border-slate-400 dark:hover:border-slate-500 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <span className="text-xs text-foreground/40 font-medium tabular-nums">
-          {active + 1} / {categories.length}
-        </span>
+
+        <div className="flex items-center gap-2">
+          {categories.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`rounded-full transition-all duration-300 ${
+                active === i
+                  ? "w-7 h-2 bg-gradient-to-r from-blue-500 to-purple-500"
+                  : "w-2 h-2 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
+              }`}
+            />
+          ))}
+        </div>
+
         <button
           onClick={() => active < categories.length - 1 && goTo(active + 1)}
           disabled={active === categories.length - 1}
-          className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-foreground/50 hover:text-foreground hover:border-slate-400 dark:hover:border-slate-500 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+          className="hidden sm:block p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-foreground/40 hover:text-foreground hover:border-slate-400 dark:hover:border-slate-500 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
-      </div>
-
-      {/* Bottom CTA */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-14 sm:pt-18 text-center animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-        <div className="inline-flex flex-col items-center gap-4">
-          <p className="text-foreground/50 text-sm">
-            More projects coming soon
-          </p>
-          <div className="flex gap-1.5">
-            {[0, 1, 2].map((i) => (
-              <div
-                key={i}
-                className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
-                style={{ opacity: 1 - i * 0.3 }}
-              />
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
