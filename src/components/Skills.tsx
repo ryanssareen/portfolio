@@ -128,6 +128,25 @@ export function Skills() {
           </div>
         </div>
 
+        {/* Brainstorming */}
+        <div className="mb-16 md:mb-20">
+          <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+            Brainstorming
+          </h3>
+          <div className="max-w-md mx-auto">
+            <div
+              className="group relative flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-lg hover:bg-white/[0.08] hover:border-white/15 transition-all duration-300 animate-fade-in-up"
+              style={{ animationDelay: "350ms" }}
+            >
+              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                <img src="/icons/every.svg" alt="Every" className="w-7 h-7" />
+              </div>
+              <p className="text-sm font-semibold text-white">Compound Engineering</p>
+              <p className="text-xs text-white/35 text-center">Every&apos;s AI-native skills for planning, ideation, and code review</p>
+            </div>
+          </div>
+        </div>
+
         {/* Tech Stack */}
         <div>
           <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>

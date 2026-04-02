@@ -12,9 +12,8 @@ export function ThemeToggle() {
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       <span
-        className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-300 flex items-center justify-center ${
-          theme === "dark" ? "translate-x-7" : "translate-x-0"
-        }`}
+        className="absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300 flex items-center justify-center"
+        style={{ transform: theme === "dark" ? "translateX(28px)" : "translateX(0)" }}
       >
         {theme === "light" ? (
           <svg
