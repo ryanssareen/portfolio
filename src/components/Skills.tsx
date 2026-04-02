@@ -1,8 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useTheme } from "./ThemeProvider";
-
 const aiTools = [
   { name: "Claude Code", icon: "/icons/claude.svg", description: "Primary coding assistant" },
   { name: "Codex", icon: "/icons/codex.svg", description: "OpenAI coding agent" },
@@ -37,22 +34,6 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
 }
 
 export function Skills() {
-  const { theme, setTheme } = useTheme();
-  const prevTheme = useRef(theme);
-
-  useEffect(() => {
-    prevTheme.current = theme;
-    if (theme === "light") setTheme("dark");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      if (prevTheme.current === "light") setTheme("light");
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <section
       id="skills"
