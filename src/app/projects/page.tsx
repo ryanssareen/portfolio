@@ -4,7 +4,7 @@ import { Projects } from "@/components/Projects";
 export const metadata: Metadata = {
   title: "Projects | Ryan Singh Sareen",
   description:
-    "View my portfolio of 6 web applications across fitness, finance, learning, and gaming — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, Recipe Journal, and VoxelHeim.",
+    "View my portfolio of 6 web applications across fitness, finance, learning, and gaming — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, Recipe Journal, and Voxelheim.",
 };
 
 const categories = [
@@ -145,7 +145,7 @@ const categories = [
     description: "Games and interactive experiences built for the browser.",
     projects: [
       {
-        title: "VoxelHeim",
+        title: "Voxelheim",
         accentColor: "#8b5cf6",
         gradient: "from-violet-500 to-purple-600",
         lightBg: "from-violet-50 to-purple-50",
