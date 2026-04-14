@@ -4,7 +4,7 @@ import { Projects } from "@/components/Projects";
 export const metadata: Metadata = {
   title: "Projects | Ryan Singh Sareen",
   description:
-    "View my portfolio of 5 AI-powered web applications across fitness, finance, and learning — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, and Recipe Journal.",
+    "View my portfolio of 6 web applications across fitness, finance, learning, and gaming — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, Recipe Journal, and VoxelHeim.",
 };
 
 const categories = [
@@ -135,6 +135,35 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/recipe-journal",
         icon: "🍳",
         image: "/projects/recipe-journal.png",
+        number: "01",
+      },
+    ],
+  },
+  {
+    name: "Gaming",
+    icon: "🎮",
+    description: "Games and interactive experiences built for the browser.",
+    projects: [
+      {
+        title: "VoxelHeim",
+        accentColor: "#8b5cf6",
+        gradient: "from-violet-500 to-purple-600",
+        lightBg: "from-violet-50 to-purple-50",
+        darkBg: "from-violet-950/30 to-purple-950/30",
+        techStack: ["Next.js", "React", "Three.js", "Firebase"],
+        apis: ["Firebase Auth", "Simplex Noise", "Zustand"],
+        description:
+          "A voxel-based survival game running entirely in the browser. Explore procedurally generated islands with 5 biomes, craft items, manage your inventory, and survive — all powered by Three.js and WebGL.",
+        features: [
+          "Procedural terrain with 5 biomes & snow-capped mountains",
+          "Survival systems with crafting & inventory management",
+          "Firebase auth with Google & Microsoft OAuth",
+          "Real-time 3D voxel rendering with Three.js",
+        ],
+        liveUrl: "https://voxelheim.vercel.app",
+        githubUrl: "https://github.com/ryanssareen/voxelheim",
+        icon: "🧱",
+        image: "/projects/voxelheim.png",
         number: "01",
       },
     ],
