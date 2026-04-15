@@ -51,17 +51,6 @@ export function FeaturedProjects() {
               >
                 {/* Image */}
                 <div className={`${!isEven ? "md:[direction:ltr]" : ""} relative rounded-2xl overflow-hidden border border-slate-200/60 dark:border-white/8 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300`}>
-                  {/* Browser chrome */}
-                  <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-200/80 dark:bg-slate-800/80 border-b border-slate-300/50 dark:border-slate-700/50">
-                    <div className="flex gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                    </div>
-                    <div className="flex-1 mx-2">
-                      <div className="h-5 rounded-md bg-white/60 dark:bg-white/10" />
-                    </div>
-                  </div>
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-slate-900">
                     <Image
                       src={project.image}

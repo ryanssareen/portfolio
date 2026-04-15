@@ -46,34 +46,16 @@ export function ProjectCard({
         >
           {/* Screenshot */}
           <div className={`${!isEven ? "lg:[direction:ltr]" : ""} relative`}>
-            <div className="relative overflow-hidden bg-slate-100 dark:bg-slate-900">
-              {/* Browser chrome bar */}
-              <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-200/80 dark:bg-slate-800/80 border-b border-slate-300/50 dark:border-slate-700/50">
-                <div className="flex gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                </div>
-                <div className="flex-1 mx-2">
-                  <div className="h-5 rounded-md bg-white/60 dark:bg-white/10 flex items-center px-2.5">
-                    <span className="text-[9px] text-slate-400 dark:text-slate-500 truncate">{liveUrl.replace(/^https?:\/\//, '')}</span>
-                  </div>
-                </div>
-              </div>
-              {/* Screenshot */}
-              <div className="relative aspect-[16/10]">
-                <Image
-                  src={image}
-                  alt={`${title} screenshot`}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                {/* Bottom fade */}
-                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/80 dark:from-slate-900/80 to-transparent" />
-              </div>
-              {/* Live badge */}
-              <div className="absolute top-12 left-3">
+            <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+              <Image
+                src={image}
+                alt={`${title} screenshot`}
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/80 dark:from-slate-900/80 to-transparent" />
+              <div className="absolute top-3 left-3">
                 <div
                   className={`flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r ${gradient} rounded-full text-white text-[10px] font-semibold shadow-lg`}
                 >
