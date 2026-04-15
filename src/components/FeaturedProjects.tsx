@@ -51,7 +51,7 @@ export function FeaturedProjects() {
               >
                 {/* Image */}
                 <div className={`${!isEven ? "md:[direction:ltr]" : ""} relative rounded-2xl overflow-hidden border border-slate-200/60 dark:border-white/8 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300`}>
-                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-slate-900">
                     <Image
                       src={project.image}
                       alt={project.title}

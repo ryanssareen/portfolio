@@ -46,7 +46,7 @@ export function ProjectCard({
         >
           {/* Screenshot */}
           <div className={`${!isEven ? "lg:[direction:ltr]" : ""} relative`}>
-            <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden bg-slate-100 dark:bg-slate-900">
               <Image
                 src={image}
                 alt={`${title} screenshot`}
