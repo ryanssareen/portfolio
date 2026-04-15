@@ -46,13 +46,12 @@ export function ProjectCard({
         >
           {/* Screenshot */}
           <div className={`${!isEven ? "lg:[direction:ltr]" : ""} relative`}>
-            <div className="relative overflow-hidden bg-slate-100 dark:bg-slate-900">
+            <div className="relative aspect-video lg:aspect-auto lg:h-full min-h-[240px] overflow-hidden bg-white dark:bg-slate-900">
               <Image
                 src={image}
                 alt={`${title} screenshot`}
-                width={1280}
-                height={720}
-                className="w-full h-auto"
+                fill
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute top-3 left-3">
