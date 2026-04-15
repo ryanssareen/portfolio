@@ -30,6 +30,7 @@ const categories = [
           "AI chatbot for personalised fitness advice",
         ],
         liveUrl: "https://thedailyathlete.in",
+        portfolioUrl: "https://ryanssareen-workout-site-k6vl.vercel.app/portfolio",
         githubUrl: "https://github.com/ryanssareen/workout-site",
         icon: "💪",
         image: "/projects/daily-athlete.png",
