@@ -46,15 +46,15 @@ export function ProjectCard({
         >
           {/* Screenshot */}
           <div className={`${!isEven ? "lg:[direction:ltr]" : ""} relative`}>
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+            <div className="relative overflow-hidden bg-slate-100 dark:bg-slate-900">
               <Image
                 src={image}
                 alt={`${title} screenshot`}
-                fill
-                className="object-cover object-top"
+                width={1280}
+                height={720}
+                className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/80 dark:from-slate-900/80 to-transparent" />
               <div className="absolute top-3 left-3">
                 <div
                   className={`flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r ${gradient} rounded-full text-white text-[10px] font-semibold shadow-lg`}

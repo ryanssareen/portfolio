@@ -51,15 +51,15 @@ export function FeaturedProjects() {
               >
                 {/* Image */}
                 <div className={`${!isEven ? "md:[direction:ltr]" : ""} relative rounded-2xl overflow-hidden border border-slate-200/60 dark:border-white/8 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300`}>
-                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <div className="relative overflow-hidden bg-slate-100 dark:bg-slate-900">
                     <Image
                       src={project.image}
                       alt={project.title}
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      width={1280}
+                      height={720}
+                      className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/60 dark:from-slate-900/60 to-transparent" />
                   </div>
                 </div>
 
