@@ -4,7 +4,7 @@ import { Projects } from "@/components/Projects";
 export const metadata: Metadata = {
   title: "Projects | Ryan Singh Sareen",
   description:
-    "View my portfolio of 6 web applications across fitness, finance, and experiments — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, Recipe Journal, and Voxelheim.",
+    "View my portfolio of 7 web applications across fitness, finance, productivity, and experiments — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, ReadStash, Recipe Journal, and Voxelheim.",
 };
 
 const categories = [
@@ -103,6 +103,34 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/bank-brief",
         icon: "🏦",
         image: "/projects/bank-brief.png",
+      },
+    ],
+  },
+  {
+    name: "Productivity",
+    icon: "📚",
+    description: "Tools built to save time and stay organised.",
+    projects: [
+      {
+        title: "ReadStash",
+        accentColor: "#f59e0b",
+        gradient: "from-amber-500 to-orange-600",
+        lightBg: "from-amber-50 to-orange-50",
+        darkBg: "from-amber-950/30 to-orange-950/30",
+        techStack: ["Next.js", "React", "Tailwind CSS", "Firebase", "TypeScript"],
+        apis: ["Firebase Auth", "Firestore", "Google Sign-In"],
+        description:
+          "A free, open-source read-it-later app. Save articles from any browser with one click via Chrome and Safari extensions, then read them later across devices in a clean, distraction-free dashboard.",
+        features: [
+          "Chrome & Safari browser extensions for one-click saves",
+          "Firebase auth with Google Sign-In",
+          "Cross-device sync with real-time Firestore",
+          "100% free & open-source",
+        ],
+        liveUrl: "https://readstash-ten.vercel.app",
+        githubUrl: "https://github.com/ryanssareen/readstash",
+        icon: "📚",
+        image: "/projects/readstash.png",
       },
     ],
   },
