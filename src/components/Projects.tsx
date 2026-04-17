@@ -22,6 +22,7 @@ interface Project {
 interface Category {
   name: string;
   icon: string;
+  gradient: string;
   description: string;
   projects: Project[];
 }
@@ -107,7 +108,7 @@ export function Projects({ categories }: ProjectsProps) {
             <button
               key={category.name}
               onClick={() => goTo(i)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+              className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200 ${
                 active === i
                   ? "bg-slate-100 dark:bg-white/10 text-foreground"
                   : "text-foreground/40 hover:text-foreground/70"
@@ -116,9 +117,9 @@ export function Projects({ categories }: ProjectsProps) {
               <span className="text-base">{category.icon}</span>
               <span>{category.name}</span>
               <span
-                className={`px-1.5 py-0.5 rounded-md text-[10px] font-bold tabular-nums ${
+                className={`px-1.5 py-0.5 rounded-md text-[10px] font-bold tabular-nums transition-colors ${
                   active === i
-                    ? "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400"
+                    ? `bg-gradient-to-r ${category.gradient} text-white shadow-sm`
                     : "bg-slate-100 dark:bg-white/5 text-foreground/30"
                 }`}
               >
@@ -133,35 +134,89 @@ export function Projects({ categories }: ProjectsProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex gap-8">
           {/* Sidebar — desktop only */}
-          <aside className="hidden md:block w-56 flex-shrink-0">
-            <div className="sticky top-24 space-y-1.5">
-              {categories.map((category, i) => (
-                <button
-                  key={category.name}
-                  onClick={() => goTo(i)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 text-left ${
-                    active === i
-                      ? "bg-slate-100 dark:bg-white/[0.08] text-foreground shadow-sm"
-                      : "text-foreground/40 hover:text-foreground/60 hover:bg-slate-50 dark:hover:bg-white/[0.03]"
-                  }`}
-                >
-                  <span className="text-lg">{category.icon}</span>
-                  <span className="flex-1">{category.name}</span>
-                  <span
-                    className={`px-1.5 py-0.5 rounded-md text-[10px] font-bold tabular-nums ${
-                      active === i
-                        ? "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400"
-                        : "bg-slate-100 dark:bg-white/5 text-foreground/30"
-                    }`}
-                  >
-                    {category.projects.length}
-                  </span>
-                </button>
-              ))}
+          <aside className="hidden md:block w-64 flex-shrink-0">
+            <div className="sticky top-24">
+              {/* Section label */}
+              <p className="px-3 mb-4 text-[10px] font-semibold tracking-[0.15em] uppercase text-foreground/35">
+                Categories
+              </p>
 
-              {/* Category description */}
-              <div className="pt-4 px-4">
-                <p className={`text-foreground/40 text-xs leading-relaxed ${enterClass}`}>
+              <nav className="space-y-1">
+                {categories.map((category, i) => {
+                  const isActive = active === i;
+                  return (
+                    <button
+                      key={category.name}
+                      onClick={() => goTo(i)}
+                      className={`group relative w-full flex items-center gap-3 pl-4 pr-3 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-left overflow-hidden ${
+                        isActive
+                          ? "text-foreground"
+                          : "text-foreground/45 hover:text-foreground/75"
+                      }`}
+                    >
+                      {/* Active gradient background — subtle */}
+                      {isActive && (
+                        <span
+                          className={`absolute inset-0 rounded-xl bg-gradient-to-r ${category.gradient} opacity-[0.08] dark:opacity-[0.12]`}
+                          aria-hidden
+                        />
+                      )}
+
+                      {/* Hover tint — very subtle */}
+                      <span
+                        className={`absolute inset-0 rounded-xl bg-slate-100/0 dark:bg-white/0 group-hover:bg-slate-100/70 dark:group-hover:bg-white/[0.03] transition-colors ${
+                          isActive ? "!bg-transparent" : ""
+                        }`}
+                        aria-hidden
+                      />
+
+                      {/* Vertical accent bar — only on active */}
+                      <span
+                        className={`absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-gradient-to-b ${category.gradient} transition-all duration-300 ${
+                          isActive ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
+                        }`}
+                        aria-hidden
+                      />
+
+                      {/* Icon */}
+                      <span className="relative text-lg leading-none transition-transform group-hover:scale-110">
+                        {category.icon}
+                      </span>
+
+                      {/* Label */}
+                      <span className="relative flex-1 truncate">
+                        {category.name}
+                      </span>
+
+                      {/* Count pill */}
+                      <span
+                        className={`relative px-1.5 py-0.5 rounded-md text-[10px] font-bold tabular-nums transition-all ${
+                          isActive
+                            ? `bg-gradient-to-r ${category.gradient} text-white shadow-sm`
+                            : "bg-slate-100 dark:bg-white/5 text-foreground/30 group-hover:text-foreground/55"
+                        }`}
+                      >
+                        {category.projects.length}
+                      </span>
+                    </button>
+                  );
+                })}
+              </nav>
+
+              {/* Divider */}
+              <div className="my-5 mx-3 h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
+
+              {/* Active category card */}
+              <div className={`px-4 ${enterClass}`} key={categories[active].name}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span
+                    className={`inline-block w-1.5 h-1.5 rounded-full bg-gradient-to-r ${categories[active].gradient}`}
+                  />
+                  <p className="text-[10px] font-semibold tracking-widest uppercase text-foreground/45">
+                    About
+                  </p>
+                </div>
+                <p className="text-foreground/50 text-xs leading-relaxed">
                   {categories[active].description}
                 </p>
               </div>

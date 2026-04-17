@@ -4,13 +4,14 @@ import { Projects } from "@/components/Projects";
 export const metadata: Metadata = {
   title: "Projects | Ryan Singh Sareen",
   description:
-    "View my portfolio of 7 web applications across fitness, finance, productivity, and experiments — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, ReadStash, Recipe Journal, and Voxelheim.",
+    "View my portfolio of 7 web applications across fitness, finance, learning, and gaming — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, ReadStash, Recipe Journal, and Voxelheim.",
 };
 
 const categories = [
   {
     name: "Fitness SaaS",
     icon: "🏋️",
+    gradient: "from-red-500 to-rose-600",
     description: "Apps built for athletes and runners to train smarter.",
     projects: [
       {
@@ -58,8 +59,9 @@ const categories = [
     ],
   },
   {
-    name: "Financial SaaS",
+    name: "Finance SaaS",
     icon: "💳",
+    gradient: "from-blue-500 to-indigo-600",
     description: "Tools to track, manage, and understand your money.",
     projects: [
       {
@@ -107,9 +109,10 @@ const categories = [
     ],
   },
   {
-    name: "Productivity",
+    name: "Learning",
     icon: "📚",
-    description: "Tools built to save time and stay organised.",
+    gradient: "from-amber-500 to-orange-600",
+    description: "Tools for collecting knowledge and learning new things.",
     projects: [
       {
         title: "ReadStash",
@@ -132,13 +135,6 @@ const categories = [
         icon: "📚",
         image: "/projects/readstash.png",
       },
-    ],
-  },
-  {
-    name: "Experiments & Games",
-    icon: "🧪",
-    description: "Projects built to explore new tech and have fun with it.",
-    projects: [
       {
         title: "Recipe Journal",
         accentColor: "#22c55e",
@@ -160,6 +156,14 @@ const categories = [
         icon: "🍳",
         image: "/projects/recipe-journal.png",
       },
+    ],
+  },
+  {
+    name: "Gaming",
+    icon: "🎮",
+    gradient: "from-violet-500 to-purple-600",
+    description: "Games built for the web with modern 3D tech.",
+    projects: [
       {
         title: "Voxelheim",
         accentColor: "#8b5cf6",
