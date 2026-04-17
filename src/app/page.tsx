@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
-import { StackTeaser } from "@/components/StackTeaser";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -37,7 +36,6 @@ export default function Home() {
     <>
       <Hero />
       <FeaturedProjects />
-      <StackTeaser />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

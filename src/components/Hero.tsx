@@ -1,11 +1,5 @@
 import Link from "next/link";
 
-const stats = [
-  { value: "5",  label: "Projects Shipped" },
-  { value: "AI", label: "Powered Apps"      },
-  { value: "∞",  label: "Curiosity"         },
-];
-
 export function Hero() {
   return (
     <section
@@ -35,12 +29,6 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="animate-fade-in-up" style={{ animationDelay: "75ms" }}>
-              <p className="text-sm text-foreground/40 font-medium mb-3 tracking-widest uppercase">
-                Ryan Singh Sareen
-              </p>
-            </div>
-
             <div className="animate-fade-in-up" style={{ animationDelay: "150ms" }}>
               <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-[1.02] mb-5">
                 <span className="bg-gradient-to-r from-blue-600 via-violet-600 to-blue-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
@@ -61,7 +49,7 @@ export function Hero() {
             </div>
 
             <div className="animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/projects"
                   className="group w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-xl font-semibold text-sm hover:shadow-xl hover:shadow-blue-500/20 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
@@ -79,30 +67,16 @@ export function Hero() {
                 </Link>
               </div>
             </div>
-
-            <div className="animate-fade-in-up" style={{ animationDelay: "400ms" }}>
-              <div className="flex items-center gap-6">
-                {stats.map((s) => (
-                  <div key={s.label} className="flex flex-col">
-                    <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent leading-none mb-1">
-                      {s.value}
-                    </span>
-                    <span className="text-[11px] text-foreground/40 font-medium tracking-wide whitespace-nowrap">
-                      {s.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right — about */}
           <div className="animate-fade-in-up" style={{ animationDelay: "300ms" }}>
             <div className="rounded-2xl border border-slate-200/60 dark:border-white/8 bg-white/60 dark:bg-white/[0.03] backdrop-blur-sm p-6 sm:p-8 space-y-6">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-foreground/30 mb-3">
-                  About Me
-                </p>
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="w-5 h-px bg-gradient-to-r from-blue-500 to-violet-500" />
+                  <h3 className="text-sm font-semibold text-foreground/75">About</h3>
+                </div>
                 <p className="text-foreground/60 text-sm leading-relaxed">
                   I&apos;m a full-stack developer who builds real products with AI.
                   I don&apos;t just write code — I use AI coding tools like Claude Code
@@ -111,20 +85,22 @@ export function Hero() {
               </div>
 
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-foreground/30 mb-3">
-                  What I Build
-                </p>
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="w-5 h-px bg-gradient-to-r from-violet-500 to-pink-500" />
+                  <h3 className="text-sm font-semibold text-foreground/75">What I build</h3>
+                </div>
                 <p className="text-foreground/60 text-sm leading-relaxed">
                   SaaS apps across fitness, finance, and learning — each one a
                   production app with auth, real-time data, AI features, and users.
-                  5 shipped so far, more in progress.
+                  6 shipped so far, more in progress.
                 </p>
               </div>
 
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-foreground/30 mb-3">
-                  Stack
-                </p>
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="w-5 h-px bg-gradient-to-r from-pink-500 to-amber-500" />
+                  <h3 className="text-sm font-semibold text-foreground/75">Stack</h3>
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {["Next.js", "React", "TypeScript", "Tailwind", "Firebase", "Supabase"].map((t) => (
                     <span

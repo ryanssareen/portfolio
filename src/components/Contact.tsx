@@ -29,10 +29,33 @@ export function Contact() {
         </div>
 
         <div className="animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-          <p className="text-base sm:text-lg md:text-xl text-foreground/60 mb-10 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-foreground/60 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
             I&apos;m always interested in hearing about new projects and opportunities.
             Whether you have a question or just want to say hi, feel free to reach out!
           </p>
+        </div>
+
+        {/* What to expect */}
+        <div className="animate-fade-in-up mb-10 sm:mb-12 max-w-xl mx-auto text-left" style={{ animationDelay: "250ms" }}>
+          <div className="rounded-2xl border border-slate-200/60 dark:border-white/8 bg-white/60 dark:bg-white/[0.03] backdrop-blur-sm p-6 sm:p-7">
+            <h3 className="text-base font-semibold text-foreground/80 mb-4 text-center">
+              Before you reach out
+            </h3>
+            <ul className="text-sm text-foreground/60 space-y-2.5">
+              <li className="flex gap-3">
+                <span className="text-green-500 flex-shrink-0 font-semibold">✓</span>
+                <span>Open to freelance projects, collaborations, and interesting ideas.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-500 flex-shrink-0 font-semibold">✓</span>
+                <span>I read every serious message and reply within 24 hours.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-rose-500 flex-shrink-0 font-semibold">✗</span>
+                <span>Not a good fit for cold sales pitches or crypto projects.</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Primary CTA - Email */}

@@ -4,7 +4,7 @@ import { Projects } from "@/components/Projects";
 export const metadata: Metadata = {
   title: "Projects | Ryan Singh Sareen",
   description:
-    "View my portfolio of 6 web applications across fitness, finance, learning, and gaming — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, Recipe Journal, and Voxelheim.",
+    "View my portfolio of 6 web applications across fitness, finance, and experiments — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, Recipe Journal, and Voxelheim.",
 };
 
 const categories = [
@@ -33,7 +33,6 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/workout-site",
         icon: "💪",
         image: "/projects/daily-athlete.png",
-        number: "01",
       },
       {
         title: "Find Me a Race",
@@ -55,7 +54,6 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/find-me-a-race",
         icon: "🏃",
         image: "/projects/find-me-a-race.png",
-        number: "02",
       },
     ],
   },
@@ -84,7 +82,6 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/finance-app",
         icon: "💰",
         image: "/projects/finance-manager.png",
-        number: "01",
       },
       {
         title: "Bank Brief",
@@ -106,14 +103,13 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/bank-brief",
         icon: "🏦",
         image: "/projects/bank-brief.png",
-        number: "02",
       },
     ],
   },
   {
-    name: "Learning Experiences",
+    name: "Experiments & Games",
     icon: "🧪",
-    description: "Projects built to explore new tech and sharpen my skills.",
+    description: "Projects built to explore new tech and have fun with it.",
     projects: [
       {
         title: "Recipe Journal",
@@ -135,15 +131,7 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/recipe-journal",
         icon: "🍳",
         image: "/projects/recipe-journal.png",
-        number: "01",
       },
-    ],
-  },
-  {
-    name: "Gaming",
-    icon: "🎮",
-    description: "Games and interactive experiences built for the browser.",
-    projects: [
       {
         title: "Voxelheim",
         accentColor: "#8b5cf6",
@@ -164,7 +152,6 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/voxelheim",
         icon: "🧱",
         image: "/projects/voxelheim.png",
-        number: "01",
       },
     ],
   },

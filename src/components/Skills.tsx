@@ -1,36 +1,50 @@
-const aiTools = [
-  { name: "Claude Code", icon: "/icons/claude.svg", description: "Primary coding assistant" },
-  { name: "Codex", icon: "/icons/codex.svg", description: "OpenAI coding agent" },
-];
-
-type Skill = {
+type AiTool = {
   name: string;
   icon: string;
+  description: string;
+  span?: string;
+};
+
+const aiTools: AiTool[] = [
+  {
+    name: "Claude Code",
+    icon: "/icons/claude.svg",
+    description: "Primary coding assistant — day-to-day driver for every project.",
+    span: "sm:col-span-2",
+  },
+  {
+    name: "Codex",
+    icon: "/icons/codex.svg",
+    description: "OpenAI coding agent for second opinions.",
+  },
+  {
+    name: "Compound Engineering",
+    icon: "/icons/every.svg",
+    description: "Every's AI-native skills for planning, ideation, and code review.",
+  },
+];
+
+type StackItem = {
+  tech: string;
+  icon?: string;
+  usedIn: string;
   invert?: boolean;
 };
 
-const skills: Skill[] = [
-  { name: "React",        icon: "/icons/react.svg" },
-  { name: "Next.js",      icon: "/icons/nextjs.svg", invert: true },
-  { name: "TypeScript",   icon: "/icons/typescript.svg" },
-  { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg" },
-  { name: "Groq API",     icon: "/icons/groq.svg" },
-  { name: "Firebase",     icon: "/icons/firebase.svg" },
-  { name: "Supabase",     icon: "/icons/supabase.svg" },
-  { name: "Node.js",      icon: "/icons/nodejs.svg" },
+const primaryStack: StackItem[] = [
+  { tech: "Next.js",      icon: "/icons/nextjs.svg",       usedIn: "All 6 projects", invert: true },
+  { tech: "React",        icon: "/icons/react.svg",        usedIn: "All 6 projects" },
+  { tech: "TypeScript",   icon: "/icons/typescript.svg",   usedIn: "All 6 projects" },
+  { tech: "Tailwind CSS", icon: "/icons/tailwindcss.svg",  usedIn: "All 6 projects" },
+  { tech: "Firebase",     icon: "/icons/firebase.svg",     usedIn: "Daily Athlete, Finance Manager, Bank Brief, Voxelheim" },
 ];
 
-function SkillCard({ skill, index }: { skill: Skill; index: number }) {
-  return (
-    <div
-      className="group relative flex items-center gap-4 bg-slate-50 dark:bg-white/[0.04] backdrop-blur-lg border border-slate-200/60 dark:border-white/[0.08] rounded-2xl p-5 sm:p-6 shadow-sm dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-slate-100 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/15 hover:shadow-md dark:hover:shadow-[0_8px_40px_rgba(99,102,241,0.3)] transition-all duration-300 animate-fade-in-up"
-      style={{ animationDelay: `${index * 65}ms` }}
-    >
-      <img src={skill.icon} alt={skill.name} className={`w-6 h-6 ${skill.invert ? "dark:invert" : ""}`} />
-      <p className="text-base font-semibold text-foreground dark:text-white">{skill.name}</p>
-    </div>
-  );
-}
+const secondaryStack: StackItem[] = [
+  { tech: "Supabase",  icon: "/icons/supabase.svg", usedIn: "Find Me a Race, Recipe Journal" },
+  { tech: "Three.js",                               usedIn: "Voxelheim" },
+  { tech: "Groq API",  icon: "/icons/groq.svg",     usedIn: "Daily Athlete, Finance Manager, Recipe Journal" },
+  { tech: "Node.js",   icon: "/icons/nodejs.svg",   usedIn: "API routes across all projects" },
+];
 
 export function Skills() {
   return (
@@ -58,9 +72,6 @@ export function Skills() {
 
         {/* Header */}
         <div className="text-center mb-16 md:mb-20 animate-fade-in-up">
-          <p className="text-xs font-semibold tracking-widest uppercase text-foreground/30 dark:text-white/30 mb-4">
-            How I Build
-          </p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-5">
             <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
               Skills &amp; Stack
@@ -88,66 +99,92 @@ export function Skills() {
           </div>
         </div>
 
-        {/* AI Tools */}
+        {/* AI Tools I Work With */}
         <div className="mb-16 md:mb-20">
-          <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-foreground/30 dark:text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-            Tools I Use to Write Code
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-2xl mx-auto">
+          <div className="flex items-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+            <h3 className="text-lg sm:text-xl font-semibold text-foreground dark:text-white">
+              AI tools I work with
+            </h3>
+            <span className="h-px flex-1 bg-gradient-to-r from-indigo-400/40 via-purple-400/30 to-transparent" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-5">
             {aiTools.map((tool, i) => (
               <div
                 key={tool.name}
-                className="group relative flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/80 dark:bg-white/[0.04] border border-slate-200/60 dark:border-white/[0.08] backdrop-blur-lg hover:bg-slate-50 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/15 shadow-sm dark:shadow-none transition-all duration-300 animate-fade-in-up"
+                className={`${tool.span ?? "sm:col-span-1"} group relative flex flex-col items-center text-center gap-3 p-6 sm:p-7 rounded-2xl bg-white/80 dark:bg-white/[0.04] border border-slate-200/60 dark:border-white/[0.08] backdrop-blur-lg hover:bg-slate-50 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/15 shadow-sm dark:shadow-none transition-all duration-300 animate-fade-in-up`}
                 style={{ animationDelay: `${(i + 3) * 65}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-white/10 flex items-center justify-center">
-                  <img src={tool.icon} alt={tool.name} className="w-7 h-7" />
+                <div className={`rounded-xl bg-slate-100 dark:bg-white/10 flex items-center justify-center ${tool.span ? "w-16 h-16" : "w-12 h-12"}`}>
+                  <img src={tool.icon} alt={tool.name} className={tool.span ? "w-10 h-10" : "w-7 h-7"} />
                 </div>
-                <p className="text-sm font-semibold text-foreground dark:text-white">{tool.name}</p>
-                <p className="text-xs text-foreground/40 dark:text-white/35">{tool.description}</p>
+                <p className={`font-semibold text-foreground dark:text-white ${tool.span ? "text-lg" : "text-sm"}`}>
+                  {tool.name}
+                </p>
+                <p className="text-xs text-foreground/50 dark:text-white/40 leading-relaxed">
+                  {tool.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Brainstorming */}
-        <div className="mb-16 md:mb-20">
-          <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-foreground/30 dark:text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-            Brainstorming
-          </h3>
-          <div className="max-w-md mx-auto">
-            <div
-              className="group relative flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/80 dark:bg-white/[0.04] border border-slate-200/60 dark:border-white/[0.08] backdrop-blur-lg hover:bg-slate-50 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/15 shadow-sm dark:shadow-none transition-all duration-300 animate-fade-in-up"
-              style={{ animationDelay: "350ms" }}
-            >
-              <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-white/10 flex items-center justify-center">
-                <img src="/icons/every.svg" alt="Every" className="w-7 h-7" />
-              </div>
-              <p className="text-sm font-semibold text-foreground dark:text-white">Compound Engineering</p>
-              <p className="text-xs text-foreground/40 dark:text-white/35 text-center">Every&apos;s AI-native skills for planning, ideation, and code review</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Tech Stack */}
+        {/* Tech Stack — grouped by usage */}
         <div>
-          <h3 className="text-center text-xs font-semibold tracking-widest uppercase text-foreground/30 dark:text-white/30 mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
-            Tech Stack
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {skills.map((skill, i) => (
-              <SkillCard key={skill.name} skill={skill} index={i} />
+          <div className="flex items-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+            <h3 className="text-lg sm:text-xl font-semibold text-foreground dark:text-white">
+              Tech stack
+            </h3>
+            <span className="h-px flex-1 bg-gradient-to-r from-indigo-400/40 via-purple-400/30 to-transparent" />
+          </div>
+
+          {/* Primary — shipped in most projects */}
+          <p className="text-xs text-foreground/40 dark:text-white/40 mb-4">
+            Core stack, in almost every project
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-10">
+            {primaryStack.map((item, i) => (
+              <div
+                key={item.tech}
+                className="flex items-start gap-4 bg-slate-50 dark:bg-white/[0.04] backdrop-blur-lg border border-slate-200/60 dark:border-white/[0.08] rounded-2xl p-5 shadow-sm dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-slate-100 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/15 transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
+                {item.icon && (
+                  <img src={item.icon} alt={item.tech} className={`w-7 h-7 flex-shrink-0 mt-0.5 ${item.invert ? "dark:invert" : ""}`} />
+                )}
+                <div className="min-w-0">
+                  <p className="text-base font-semibold text-foreground dark:text-white leading-tight">
+                    {item.tech}
+                  </p>
+                  <p className="text-xs text-foreground/50 dark:text-white/40 mt-1 leading-snug">
+                    {item.usedIn}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Secondary — project-specific */}
+          <p className="text-xs text-foreground/40 dark:text-white/40 mb-4">
+            Project-specific additions
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {secondaryStack.map((item) => (
+              <div
+                key={item.tech}
+                className="group flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-50 dark:bg-white/[0.04] border border-slate-200/60 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-white/15 transition-colors"
+                title={item.usedIn}
+              >
+                {item.icon && <img src={item.icon} alt={item.tech} className="w-4 h-4" />}
+                <span className="text-sm font-medium text-foreground/70 dark:text-white/70">
+                  {item.tech}
+                </span>
+                <span className="text-[11px] text-foreground/35 dark:text-white/30">
+                  · {item.usedIn}
+                </span>
+              </div>
             ))}
           </div>
         </div>
-
-        {/* Footer note */}
-        <p
-          className="mt-14 text-center text-xs text-foreground/20 dark:text-white/20 animate-fade-in-up"
-          style={{ animationDelay: "700ms" }}
-        >
-          Stack reflects real shipped usage, not generic skill lists.
-        </p>
       </div>
     </section>
   );

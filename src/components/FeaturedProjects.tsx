@@ -67,7 +67,7 @@ export function FeaturedProjects() {
                 <div className={`${!isEven ? "md:[direction:ltr]" : ""}`}>
                   <div className="flex items-center gap-2 mb-3">
                     <span className={`inline-block w-2 h-2 rounded-full bg-gradient-to-r ${project.gradient}`} />
-                    <span className="text-[10px] font-semibold tracking-wider uppercase text-foreground/35">
+                    <span className="text-xs font-medium text-foreground/45">
                       {project.category}
                     </span>
                   </div>

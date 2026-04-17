@@ -17,7 +17,6 @@ interface Project {
   githubUrl: string;
   icon: string;
   image: string;
-  number: string;
 }
 
 interface Category {
