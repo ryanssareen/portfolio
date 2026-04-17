@@ -122,10 +122,12 @@ html {
 .animate-blob            { animation: blob 7s infinite; }
 .animation-delay-2000    { animation-delay: 2s; }
 .animation-delay-4000    { animation-delay: 4s; }
-.animate-fade-in-up      { animation: fade-in-up 0.6s ease-out forwards; opacity: 0; }
-.animate-fade-in         { animation: fade-in 0.5s ease-out forwards; opacity: 0; }
-.animate-slide-in-left   { animation: slide-in-left 0.7s ease-out forwards; opacity: 0; }
-.animate-slide-in-right  { animation: slide-in-right 0.7s ease-out forwards; opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in-up      { animation: fade-in-up 0.6s ease-out both; }
+  .animate-fade-in         { animation: fade-in 0.5s ease-out both; }
+  .animate-slide-in-left   { animation: slide-in-left 0.7s ease-out both; }
+  .animate-slide-in-right  { animation: slide-in-right 0.7s ease-out both; }
+}
 .animate-pulse-soft      { animation: pulse-soft 2s ease-in-out infinite; }
 .animate-bounce-subtle   { animation: bounce-subtle 2s ease-in-out infinite; }
 .animate-width-grow      { animation: width-grow 1s ease-out forwards; }
