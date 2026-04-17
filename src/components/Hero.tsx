@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const stats = [
@@ -10,12 +7,6 @@ const stats = [
 ];
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <section
       id="hero"
@@ -37,20 +28,20 @@ export function Hero() {
 
           {/* Left — intro */}
           <div>
-            <div className={`transition-all duration-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div className="animate-fade-in-up">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-green-200 dark:border-green-800/60 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-semibold mb-6 tracking-wide uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-soft" />
                 Available for projects
               </div>
             </div>
 
-            <div className={`transition-all duration-700 delay-75 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div className="animate-fade-in-up" style={{ animationDelay: "75ms" }}>
               <p className="text-sm text-foreground/40 font-medium mb-3 tracking-widest uppercase">
                 Ryan Singh Sareen
               </p>
             </div>
 
-            <div className={`transition-all duration-700 delay-150 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div className="animate-fade-in-up" style={{ animationDelay: "150ms" }}>
               <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-[1.02] mb-5">
                 <span className="bg-gradient-to-r from-blue-600 via-violet-600 to-blue-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
                   Full-Stack
@@ -60,7 +51,7 @@ export function Hero() {
               </h1>
             </div>
 
-            <div className={`transition-all duration-700 delay-200 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div className="animate-fade-in-up" style={{ animationDelay: "200ms" }}>
               <p className="text-base sm:text-lg text-foreground/50 mb-8 max-w-md leading-relaxed font-light">
                 Building intelligent web experiences with{" "}
                 <span className="text-blue-500 dark:text-blue-400 font-medium">React</span>,{" "}
@@ -69,7 +60,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className={`transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div className="animate-fade-in-up" style={{ animationDelay: "300ms" }}>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <Link
                   href="/projects"
@@ -89,7 +80,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className={`transition-all duration-700 delay-[400ms] ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div className="animate-fade-in-up" style={{ animationDelay: "400ms" }}>
               <div className="flex items-center gap-6">
                 {stats.map((s) => (
                   <div key={s.label} className="flex flex-col">
@@ -106,7 +97,7 @@ export function Hero() {
           </div>
 
           {/* Right — about */}
-          <div className={`transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+          <div className="animate-fade-in-up" style={{ animationDelay: "300ms" }}>
             <div className="rounded-2xl border border-slate-200/60 dark:border-white/8 bg-white/60 dark:bg-white/[0.03] backdrop-blur-sm p-6 sm:p-8 space-y-6">
               <div>
                 <p className="text-xs font-semibold tracking-widest uppercase text-foreground/30 mb-3">

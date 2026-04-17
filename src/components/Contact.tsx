@@ -1,5 +1,3 @@
-"use client";
-
 export function Contact() {
   return (
     <section id="contact" className="min-h-[100svh] md:min-h-screen flex items-center justify-center pt-24 md:pt-28 pb-16 sm:pb-20 px-4 sm:px-6 relative overflow-hidden">

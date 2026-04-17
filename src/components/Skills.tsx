@@ -1,5 +1,3 @@
-"use client";
-
 const aiTools = [
   { name: "Claude Code", icon: "/icons/claude.svg", description: "Primary coding assistant" },
   { name: "Codex", icon: "/icons/codex.svg", description: "OpenAI coding agent" },
