@@ -92,7 +92,7 @@ export function Hero() {
                 <p className="text-foreground/60 text-sm leading-relaxed">
                   SaaS apps across fitness, finance, and learning — each one a
                   production app with auth, real-time data, AI features, and users.
-                  6 shipped so far, more in progress.
+                  8 shipped so far, more in progress.
                 </p>
               </div>
 

@@ -4,7 +4,7 @@ import { Projects } from "@/components/Projects";
 export const metadata: Metadata = {
   title: "Projects | Ryan Singh Sareen",
   description:
-    "View my portfolio of 7 web applications across fitness, finance, learning, and gaming — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, ReadStash, Recipe Journal, and Voxelheim.",
+    "View my portfolio of 9 web applications across fitness, finance, developer tools, learning, and gaming — including The Daily Athlete, Find Me a Race, Finance Manager, Bank Brief, ccr, ReadStash, Recipe Journal, Threditor, and Voxelheim.",
 };
 
 const categories = [
@@ -109,6 +109,35 @@ const categories = [
     ],
   },
   {
+    name: "Developer Tools",
+    icon: "🛠️",
+    gradient: "from-teal-500 to-cyan-600",
+    description: "CLIs and tools I build to make my own development faster.",
+    projects: [
+      {
+        title: "ccr",
+        accentColor: "#14b8a6",
+        gradient: "from-teal-500 to-cyan-600",
+        lightBg: "from-teal-50 to-cyan-50",
+        darkBg: "from-teal-950/30 to-cyan-950/30",
+        techStack: ["TypeScript", "Node.js", "Electron", "React"],
+        apis: ["Groq", "Together AI", "Cerebras", "OpenRouter"],
+        description:
+          "A free terminal coding assistant — and downloadable desktop app — that reads your repo, proposes diffs, and runs shell commands with your approval. No API key required: one login routes every request across multiple LLM providers.",
+        features: [
+          "Repo-aware indexing of files & imports to find relevant code",
+          "Preview-before-apply diffs with inline approval",
+          "Runs shell commands only after you authorize them",
+          "No API keys — 2,000 free requests/month per account",
+        ],
+        liveUrl: "https://ccr-ebon.vercel.app",
+        githubUrl: "https://github.com/ryanssareen/ccr",
+        icon: "⌨️",
+        image: "/projects/ccr.png",
+      },
+    ],
+  },
+  {
     name: "Learning",
     icon: "📚",
     gradient: "from-amber-500 to-orange-600",
@@ -184,6 +213,27 @@ const categories = [
         githubUrl: "https://github.com/ryanssareen/voxelheim",
         icon: "🧱",
         image: "/projects/voxelheim.png",
+      },
+      {
+        title: "Threditor",
+        accentColor: "#65a30d",
+        gradient: "from-lime-500 to-green-600",
+        lightBg: "from-lime-50 to-green-50",
+        darkBg: "from-lime-950/30 to-green-950/30",
+        techStack: ["Next.js", "React", "Three.js", "Tailwind CSS"],
+        apis: ["Groq (AI Generation)", "Supabase", "Firebase Auth"],
+        description:
+          "A free, open-source 3D Minecraft skin editor for the browser. Describe a character — 'forest knight, mossy leather armor' — and get a game-ready 64×64 skin in seconds, then refine it in a full 3D paint editor. No account needed.",
+        features: [
+          "AI skin generation from a text prompt in ~4s",
+          "Full 3D editor: bucket, eraser, picker, mirror & layers",
+          "Exports valid 64×64 Minecraft atlases (Classic & Slim)",
+          "Real-time 3D preview powered by React Three Fiber",
+        ],
+        liveUrl: "https://threditor.vercel.app",
+        githubUrl: "https://github.com/ryanssareen/threditor",
+        icon: "🎨",
+        image: "/projects/threditor.png",
       },
     ],
   },
