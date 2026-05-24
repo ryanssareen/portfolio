@@ -36,7 +36,7 @@ export function ProjectCard({
     >
       <div className="rounded-2xl border border-slate-200/60 dark:border-white/8 bg-white dark:bg-white/[0.02] shadow-sm overflow-hidden">
         {/* Screenshot — full width on top */}
-        <div className="relative">
+        <div>
           <Image
             src={image}
             alt={`${title} screenshot`}
@@ -46,14 +46,6 @@ export function ProjectCard({
             sizes="(max-width: 768px) 100vw, 90vw"
             priority={index < 2}
           />
-          <div className="absolute top-3 left-3">
-            <div
-              className={`flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r ${gradient} rounded-full text-white text-[10px] font-semibold shadow-lg`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse-soft" />
-              Live
-            </div>
-          </div>
         </div>
 
         {/* Content */}
